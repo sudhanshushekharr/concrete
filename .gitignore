@@ -1,2 +1,5 @@
-myvenv
 myenv
+myenv/
+
+myvenv/
+myvenv/lib/site-packages/xgboost/lib/libxgboost.dylib
