@@ -25,7 +25,7 @@ def predict_concrete_strength(cement, blast_slag, fly_ash, water,
 
         
         # Replace 'your_server_ip_or_domain' with the actual IP address or domain name
-        response = requests.post('https://concretestrentgh.streamlit.app/predict',
+        response = requests.post('https://flasky.streamlit.app/predict',
                                  json=data,
                                  headers={'Content-Type': 'application/json'})
         result = response.json()
