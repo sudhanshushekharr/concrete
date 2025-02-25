@@ -6,7 +6,7 @@ from io import BytesIO
 import base64
 from datetime import datetime
 
-def predict_concrete_strength(cement, blast_slag, fly_ash, water,
+def predict_concrete_strength(cement, blast_slag, fly_ash, water, 
                                superplasticizer, coarse_agg, fine_agg, age):
     # Prepare data for API call
     data = {
@@ -19,22 +19,17 @@ def predict_concrete_strength(cement, blast_slag, fly_ash, water,
         'fine_Agg': fine_agg,
         'Age': age
     }
-
+    
     # Make API call
     try:
-
-        
-        # Replace 'your_server_ip_or_domain' with the actual IP address or domain name
-        response = requests.post('https://flasky.streamlit.app/predict',
-                                 json=data,
+        response = requests.post('http://localhost:5002/predict', 
+                                 json=data, 
                                  headers={'Content-Type': 'application/json'})
         result = response.json()
         return result['predicted_strength']
     except Exception as e:
         st.error(f"Prediction error: {e}")
         return None
-
-
 
 def generate_html_content(mix_data):
     """Generate HTML content for displaying mix data"""
